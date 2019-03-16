@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+
+    <style>
+        input:focus {
+            outline: 0;
+        }
+
+        input:focus:invalid {
+            border: 1px solid red;
+            box-shadow: 0 0 1px red;
+        }
+
+        input:focus:valid {
+            border: 1px solid green;
+            box-shadow: 0 0 1px green;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <img src="Default-avatar.jpg" alt="avatar">
+        <form action="">
+            <div class="st-input">
+                <input type="email" name="email" placeholder="Введите email" required pattern="\S + @\S + \.S + $" title="sample@sample.com">
+            </div>
+            <div class="st-input">
+                <input type="password" placeholder="Password" name="password" required pattern="[0-9a-zA-Z]{5,}" id="password" onkeyup="check()" /><span id='lenght_msg'></span>
+            </div>
+            <div class="st-input">
+                <input type="password" placeholder="Requred Password" name="confirm_password" required pattern="[0-9a-zA-Z]{5,}" id="confirm_password" onkeyup="check()" />
+                <span id='message'></span>
+            </div>
+            <br>
+            <input type="submit" class="submit" name="submit" value="Зарегестрировать">
+        </form>
+    </div>
+    <script src="js/check.js"></script>
+</body>
+
+</html>
